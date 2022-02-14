@@ -13,6 +13,8 @@ Astronomy picture of the day
 - storyboard
 - Use Kingfisher library: to cache image url , ProgressHUD : to show display progress alert.
 - Handle UIUserInterfaceStyle: as light so that UI should consistent in dark mode.
+- API end point : https://api.nasa.gov/
+
 
 Tool:
 xcode Version 13.2.1 (13C100)
