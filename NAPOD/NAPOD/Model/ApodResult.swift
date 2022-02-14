@@ -21,7 +21,10 @@ class ApodResult: Codable {
         guard let resultDetail = CoreDataManager.sharedInstance.add(ResultPictureDetail.self) else {
             return
         }
-        if !CoreDataManager.sharedInstance.isExist(date: self.date!, PictureDetails.self) {
+        guard let uniqueId = self.date else {
+            return
+        }
+        if !CoreDataManager.sharedInstance.isExist(date: uniqueId, PictureDetails.self) {
             resultDetail.date = self.date
             resultDetail.title = self.title
             resultDetail.url = self.url
@@ -30,6 +33,5 @@ class ApodResult: Codable {
             resultDetail.service_version = self.service_version
         }
         CoreDataManager.sharedInstance.save()
-        debugPrint("---save api data----")
     }
 }

@@ -31,11 +31,6 @@ class DetailsViewController: UIViewController {
         callPictureOfDayAPI(date: selectedDate)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        apodResult = detailsViewModel.getStoreCacheData()
-    }
-    
     //MARK: Methods
     private func setupUI() {
         detailsViewModel.deleage = self
@@ -102,7 +97,6 @@ extension DetailsViewController: DetailsViewModelDelegate {
     }
     
     func didReceiveFailure(response: NetworkError) {
-       
         if let data = detailsViewModel.getStoreCacheData() {
             self.apodResult = data
         } else {

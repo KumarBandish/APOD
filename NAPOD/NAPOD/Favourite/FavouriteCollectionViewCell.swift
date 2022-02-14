@@ -20,7 +20,11 @@ class FavouriteCollectionViewCell: UICollectionViewCell {
     }
     
     func configureUI(pictureDetail: PictureDetails) {
-        dateLabel.text = Utility().convertDateFormatterToDate(pictureDetail.date!)
+        if let date = pictureDetail.date {
+            dateLabel.text = Utility().convertDateFormatterToDate(date)
+        } else {
+            dateLabel.text = "Today"
+        }
         titleLabel.text = pictureDetail.title
         let imageURL = URL(string: pictureDetail.url ?? "")
         pictureImageView.kf.setImage(with: imageURL)
