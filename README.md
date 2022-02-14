@@ -1,6 +1,8 @@
 # APOD
 Astronomy picture of the day
 
+Project Name: NAPOD(NASA’s Astronomy picture of the day), It is a ios mobile application having following fetaures:
+
 #Basic features: 
 -	search for the picture for a date of user choice
 -	create/manage a list of "favorite" listings
